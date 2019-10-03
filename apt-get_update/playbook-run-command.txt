@@ -1,0 +1,1 @@
+ansible-playbook playbook-apt-install.yml --ask-become-pass -i inventory-bennetawx.yml
