@@ -1,4 +1,4 @@
-- hosts: servers 
+- hosts: BenNet_DEV 
   gather_facts: true
   sudo: true 
   serial: 1   
