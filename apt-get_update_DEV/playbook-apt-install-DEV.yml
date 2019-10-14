@@ -10,4 +10,4 @@
      register: upgrade     
    - name: Reboot Servers
      reboot:
-     when: upgrade.change
+#     when: upgrade.change
