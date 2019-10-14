@@ -1,16 +1,13 @@
 - hosts: all 
   gather_facts: true
   #sudo: true #This is needed when your using just ansible and not AWX creds.
-  serial: 1
-#     
+  serial: 1     
   tasks:
    - name: Updates Servers via apt-get 
      apt-get: update_cache=yes
-#
    - name: Upgrade Servers via apt-get
      apt: upgrade=dist
-     register: upgrade
-#     
+     register: upgrade     
    - name: Reboot Servers
      reboot:
-#     when: upgrade.change
+     when: upgrade.change
