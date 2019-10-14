@@ -7,5 +7,7 @@
      apt: update_cache=yes
    - name: Upgrade Servers via apt-get
      apt: upgrade=dist
+     register: upgrade
    - name: Reboot Servers
      reboot:
+     when: upgrade.change
