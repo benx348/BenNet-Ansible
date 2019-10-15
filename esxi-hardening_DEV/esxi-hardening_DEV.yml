@@ -5,13 +5,13 @@
   ## Variables #######################################################################################
   ####################################################################################################
 
-  vars:
-    vcenter_hostname:
-    vcenter_username:
-    vcenter_password:
-    esxi_hostname: 
-    esxi_username:
-    esxi_password:
+#  vars:
+#    vcenter_hostname:
+#    vcenter_username:
+#    vcenter_password:
+#    esxi_hostname: 
+#    esxi_username:
+#    esxi_password:
 
 
   tasks:
@@ -25,7 +25,8 @@
         hostname: "{{ vcenter_hostname }}"
         username: "{{ vcenter_username }}"
         password: "{{ vcenter_password }}"
-        cluster_name: "{{ vcenter_cluster }}" 
+        esxi_hostname: "{{ esxi_hostname }}" 
+#        cluster_name: "{{ vcenter_cluster }}" 
         validate_certs: no
       tags: debug
 
@@ -34,7 +35,8 @@
         hostname: "{{ vcenter_hostname }}"
         username: "{{ vcenter_username }}"
         password: "{{ vcenter_password }}"
-        cluster_name: "{{ vcenter_cluster }}" 
+        esxi_hostname: "{{ esxi_hostname }}" 
+#        cluster_name: "{{ vcenter_cluster }}" 
         validate_certs: no
       tags: debug
 
@@ -43,7 +45,8 @@
         hostname: '{{ vcenter_hostname }}'
         username: '{{ vcenter_username }}'
         password: '{{ vcenter_password }}'
-        cluster_name: "{{ vcenter_cluster }}" 
+        esxi_hostname: "{{ esxi_hostname }}" 
+#        cluster_name: "{{ vcenter_cluster }}"  
         validate_certs: no
       tags: debug
 
@@ -56,7 +59,8 @@
         hostname: "{{ vcenter_hostname }}"
         username: "{{ vcenter_username }}"
         password: "{{ vcenter_password }}"
-        cluster_name: "{{ vcenter_cluster }}"
+        esxi_hostname: "{{ esxi_hostname }}" 
+#        cluster_name: "{{ vcenter_cluster }}" 
         validate_certs: no
         state: absent  
 
@@ -69,7 +73,8 @@
         hostname: "{{ vcenter_hostname }}"
         username: "{{ vcenter_username }}"
         password: "{{ vcenter_password }}"
-        cluster_name: "{{ vcenter_cluster }}"
+        esxi_hostname: "{{ esxi_hostname }}" 
+#        cluster_name: "{{ vcenter_cluster }}" 
         validate_certs: no
         service_name: DCUI
         state: present
@@ -80,7 +85,8 @@
         hostname: "{{ vcenter_hostname }}"
         username: "{{ vcenter_username }}"
         password: "{{ vcenter_password }}"
-        cluster_name: "{{ vcenter_cluster }}" 
+        esxi_hostname: "{{ esxi_hostname }}" 
+#        cluster_name: "{{ vcenter_cluster }}" 
         validate_certs: no
         service_name: TSM
         state: absent
@@ -91,7 +97,8 @@
         hostname: "{{ vcenter_hostname }}"
         username: "{{ vcenter_username }}"
         password: "{{ vcenter_password }}"
-        cluster_name: "{{ vcenter_cluster }}"
+        esxi_hostname: "{{ esxi_hostname }}" 
+#        cluster_name: "{{ vcenter_cluster }}" 
         validate_certs: no
         service_name: TSM-SSH
         state: absent
@@ -102,7 +109,8 @@
         hostname: "{{ vcenter_hostname }}"
         username: "{{ vcenter_username }}"
         password: "{{ vcenter_password }}"
-        cluster_name: "{{ vcenter_cluster }}" 
+        esxi_hostname: "{{ esxi_hostname }}" 
+#        cluster_name: "{{ vcenter_cluster }}" 
         validate_certs: no
         service_name: lbtd
         state: present
@@ -113,7 +121,8 @@
         hostname: "{{ vcenter_hostname }}"
         username: "{{ vcenter_username }}"
         password: "{{ vcenter_password }}"
-        cluster_name: "{{ vcenter_cluster }}" 
+        esxi_hostname: "{{ esxi_hostname }}" 
+#        cluster_name: "{{ vcenter_cluster }}" 
         validate_certs: no
         service_name: lwsmd
         state: present
@@ -124,7 +133,8 @@
         hostname: "{{ vcenter_hostname }}"
         username: "{{ vcenter_username }}"
         password: "{{ vcenter_password }}"
-        cluster_name: "{{ vcenter_cluster }}" 
+        esxi_hostname: "{{ esxi_hostname }}" 
+#        cluster_name: "{{ vcenter_cluster }}" 
         validate_certs: no
         service_name: ntpd
         state: present
@@ -135,7 +145,8 @@
         hostname: "{{ vcenter_hostname }}"
         username: "{{ vcenter_username }}"
         password: "{{ vcenter_password }}"
-        cluster_name: "{{ vcenter_cluster }}" 
+        esxi_hostname: "{{ esxi_hostname }}" 
+#        cluster_name: "{{ vcenter_cluster }}" 
         validate_certs: no
         service_name: pcscd
         state: absent
@@ -146,7 +157,8 @@
         hostname: "{{ vcenter_hostname }}"
         username: "{{ vcenter_username }}"
         password: "{{ vcenter_password }}"
-        cluster_name: "{{ vcenter_cluster }}" 
+        esxi_hostname: "{{ esxi_hostname }}" 
+#        cluster_name: "{{ vcenter_cluster }}" 
         validate_certs: no
         service_name: sfcbd-watchdog
         state: absent
@@ -157,7 +169,8 @@
         hostname: "{{ vcenter_hostname }}"
         username: "{{ vcenter_username }}"
         password: "{{ vcenter_password }}"
-        cluster_name: "{{ vcenter_cluster }}" 
+        esxi_hostname: "{{ esxi_hostname }}" 
+#        cluster_name: "{{ vcenter_cluster }}" 
         validate_certs: no
         service_name: snmpd
         state: absent
@@ -168,7 +181,8 @@
         hostname: "{{ vcenter_hostname }}"
         username: "{{ vcenter_username }}"
         password: "{{ vcenter_password }}"
-        cluster_name: "{{ vcenter_cluster }}" 
+        esxi_hostname: "{{ esxi_hostname }}" 
+#        cluster_name: "{{ vcenter_cluster }}" 
         validate_certs: no
         service_name: vmsyslogd
         state: present
@@ -179,7 +193,8 @@
         hostname: "{{ vcenter_hostname }}"
         username: "{{ vcenter_username }}"
         password: "{{ vcenter_password }}"
-        cluster_name: "{{ vcenter_cluster }}" 
+        esxi_hostname: "{{ esxi_hostname }}" 
+#        cluster_name: "{{ vcenter_cluster }}" 
         validate_certs: no
         service_name: vpxa
         state: present
@@ -190,7 +205,8 @@
         hostname: "{{ vcenter_hostname }}"
         username: "{{ vcenter_username }}"
         password: "{{ vcenter_password }}"
-        cluster_name: "{{ vcenter_cluster }}" 
+        esxi_hostname: "{{ esxi_hostname }}" 
+#        cluster_name: "{{ vcenter_cluster }}" 
         validate_certs: no
         service_name: xorg
         state: absent
@@ -205,7 +221,8 @@
         hostname: "{{ vcenter_hostname }}"
         username: "{{ vcenter_username }}"
         password: "{{ vcenter_password }}"
-        cluster_name: "{{ vcenter_cluster }}"
+        esxi_hostname: "{{ esxi_hostname }}" 
+#        cluster_name: "{{ vcenter_cluster }}" 
         validate_certs: no
         options:
             "UserVars.ESXiShellInteractiveTimeOut": 900
@@ -227,7 +244,8 @@
         hostname: '{{ vcenter_hostname }}'
         username: '{{ vcenter_username }}'
         password: '{{ vcenter_password }}'
-        cluster_name: "{{ vcenter_cluster }}"  
+        esxi_hostname: "{{ esxi_hostname }}" 
+#        cluster_name: "{{ vcenter_cluster }}"  
         validate_certs: no      
         rules:
           - name: DHCPv6
@@ -246,6 +264,7 @@
         hostname: "{{ vcenter_hostname }}"
         username: "{{ vcenter_username }}"
         password: "{{ vcenter_password }}"
-        cluster_name: "{{ vcenter_cluster }}"
+        esxi_hostname: "{{ esxi_hostname }}" 
+#        cluster_name: "{{ vcenter_cluster }}" 
         validate_certs: no
         state: present  
