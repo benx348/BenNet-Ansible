@@ -10,6 +10,7 @@
     vcenter_username: bwalker@bennet.com 
     esxi_hostname: bennetesxi.bennet.com
     esxi_username: root
+    ### Passwords provided by Ansible Vault
 
 
 
