@@ -5,13 +5,12 @@
   ## Variables #######################################################################################
   ####################################################################################################
 
-#  vars:
-#    vcenter_hostname:
-#    vcenter_username:
-#    vcenter_password:
-#    esxi_hostname: 
-#    esxi_username:
-#    esxi_password:
+  vars:
+    vcenter_hostname: bennetvc.bennet.com 
+    vcenter_username: bwalker@bennet.com 
+    esxi_hostname: bennetesxi.bennet.com
+    esxi_username: root
+
 
 
   tasks:
