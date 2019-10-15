@@ -5,29 +5,13 @@
   ## Variables #######################################################################################
   ####################################################################################################
 
-  vars_prompt:
-  - name: "vcenter_hostname"
-    prompt: "vCenter Hostname"
-    unsafe: yes
-    private: no
-
-  - name: "vcenter_cluster"
-    prompt: "vCenter CLuster Name"
-    unsafe: yes
-    private: no
-
-  - name: "vcenter_username"
-    prompt: "vCenter Username"
-    unsafe: yes
-    private: no
-
-  - name: "vcenter_password"
-    prompt: "vCenter Password"
-    unsafe: yes
-    private: yes
-    confirm: yes
-#    encrypt: "sha512_crypt"
-#    salt_size: 7
+  vars:
+    vcenter_hostname:
+    vcenter_username:
+    vcenter_password:
+    esxi_hostname: 
+    esxi_username:
+    esxi_password:
 
 
   tasks:
