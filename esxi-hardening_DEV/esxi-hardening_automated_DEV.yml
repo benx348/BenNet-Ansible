@@ -11,7 +11,7 @@
     esxi_hostname: "bennetesxi.bennet.com"
     esxi_username: "root"
     ### Passwords provided by Ansible Vault
-#    vault_credential: models.Field(type=types.Related('vcenterfidpassword'), required=False, display=False)
+    vault_credential: models.Field(type=types.Related('vcenterfidpassword'), required=False, display=False)
 #    vault_credential: models.Field(type=types.Related('esxirootpassword'), required=False, display=False)
 
 ####################################################################################################
