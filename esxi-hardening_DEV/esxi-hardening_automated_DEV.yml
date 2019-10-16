@@ -11,8 +11,8 @@
     esxi_hostname: "bennetesxi.bennet.com"
     esxi_username: "root"
     ### Passwords provided by Ansible Vault
-    vault_credential: models.Field(type=types.Related('vcenterfidpassword'), required=False, display=False)
-    vault_credential: models.Field(type=types.Related('esxirootpassword'), required=False, display=False)
+#    vault_credential: models.Field(type=types.Related('vcenterfidpassword'), required=False, display=False)
+#    vault_credential: models.Field(type=types.Related('esxirootpassword'), required=False, display=False)
 
 ####################################################################################################
   tasks: ########################################################################################### 
@@ -26,7 +26,7 @@
 #      vmware_host_service_facts:
 #        hostname: "{{ vcenter_hostname }}"
 #        username: "{{ vcenter_username }}"
-#        password: "{{ vcenter_password }}"
+#        password: "{{ vcenterfidpassword }}"
 #        esxi_hostname: "{{ esxi_hostname }}" 
 #        cluster_name: "{{ vcenter_cluster }}" 
 #        validate_certs: no
@@ -36,7 +36,7 @@
 #      vmware_host_config_facts:
 #        hostname: "{{ vcenter_hostname }}"
 #        username: "{{ vcenter_username }}"
-#        password: "{{ vcenter_password }}"
+#        password: "{{ vcenterfidpassword }}"
 #        esxi_hostname: "{{ esxi_hostname }}" 
 #        cluster_name: "{{ vcenter_cluster }}" 
 #        validate_certs: no
@@ -46,7 +46,7 @@
 #      vmware_host_firewall_facts:
 #        hostname: '{{ vcenter_hostname }}'
 #        username: '{{ vcenter_username }}'
-#        password: '{{ vcenter_password }}'
+#        password: '{{ vcenterfidpassword }}'
 #        esxi_hostname: "{{ esxi_hostname }}" 
 #        cluster_name: "{{ vcenter_cluster }}"  
 #        validate_certs: no
@@ -60,7 +60,7 @@
       vmware_host_lockdown:
         hostname: "{{ vcenter_hostname }}"
         username: "{{ vcenter_username }}"
-        password: "{{ vcenter_password }}"
+        password: "{{ vcenterfidpassword }}"
         esxi_hostname: "{{ esxi_hostname }}" 
 #        cluster_name: "{{ vcenter_cluster }}" 
         validate_certs: no
@@ -74,7 +74,7 @@
       vmware_host_service_manager:
         hostname: "{{ vcenter_hostname }}"
         username: "{{ vcenter_username }}"
-        password: "{{ vcenter_password }}"
+        password: "{{ vcenterfidpassword }}"
         esxi_hostname: "{{ esxi_hostname }}" 
 #        cluster_name: "{{ vcenter_cluster }}" 
         validate_certs: no
@@ -86,7 +86,7 @@
       vmware_host_service_manager:
         hostname: "{{ vcenter_hostname }}"
         username: "{{ vcenter_username }}"
-        password: "{{ vcenter_password }}"
+        password: "{{ vcenterfidpassword }}"
         esxi_hostname: "{{ esxi_hostname }}" 
 #        cluster_name: "{{ vcenter_cluster }}" 
         validate_certs: no
@@ -98,7 +98,7 @@
       vmware_host_service_manager:
         hostname: "{{ vcenter_hostname }}"
         username: "{{ vcenter_username }}"
-        password: "{{ vcenter_password }}"
+        password: "{{ vcenterfidpassword }}"
         esxi_hostname: "{{ esxi_hostname }}" 
 #        cluster_name: "{{ vcenter_cluster }}" 
         validate_certs: no
@@ -110,7 +110,7 @@
       vmware_host_service_manager:
         hostname: "{{ vcenter_hostname }}"
         username: "{{ vcenter_username }}"
-        password: "{{ vcenter_password }}"
+        password: "{{ vcenterfidpassword }}"
         esxi_hostname: "{{ esxi_hostname }}" 
 #        cluster_name: "{{ vcenter_cluster }}" 
         validate_certs: no
@@ -122,7 +122,7 @@
       vmware_host_service_manager:
         hostname: "{{ vcenter_hostname }}"
         username: "{{ vcenter_username }}"
-        password: "{{ vcenter_password }}"
+        password: "{{ vcenterfidpassword }}"
         esxi_hostname: "{{ esxi_hostname }}" 
 #        cluster_name: "{{ vcenter_cluster }}" 
         validate_certs: no
@@ -134,7 +134,7 @@
       vmware_host_service_manager:
         hostname: "{{ vcenter_hostname }}"
         username: "{{ vcenter_username }}"
-        password: "{{ vcenter_password }}"
+        password: "{{ vcenterfidpassword }}"
         esxi_hostname: "{{ esxi_hostname }}" 
 #        cluster_name: "{{ vcenter_cluster }}" 
         validate_certs: no
@@ -146,7 +146,7 @@
       vmware_host_service_manager:
         hostname: "{{ vcenter_hostname }}"
         username: "{{ vcenter_username }}"
-        password: "{{ vcenter_password }}"
+        password: "{{ vcenterfidpassword }}"
         esxi_hostname: "{{ esxi_hostname }}" 
 #        cluster_name: "{{ vcenter_cluster }}" 
         validate_certs: no
@@ -158,7 +158,7 @@
       vmware_host_service_manager:
         hostname: "{{ vcenter_hostname }}"
         username: "{{ vcenter_username }}"
-        password: "{{ vcenter_password }}"
+        password: "{{ vcenterfidpassword }}"
         esxi_hostname: "{{ esxi_hostname }}" 
 #        cluster_name: "{{ vcenter_cluster }}" 
         validate_certs: no
@@ -170,7 +170,7 @@
       vmware_host_service_manager:
         hostname: "{{ vcenter_hostname }}"
         username: "{{ vcenter_username }}"
-        password: "{{ vcenter_password }}"
+        password: "{{ vcenterfidpassword }}"
         esxi_hostname: "{{ esxi_hostname }}" 
 #        cluster_name: "{{ vcenter_cluster }}" 
         validate_certs: no
@@ -182,7 +182,7 @@
       vmware_host_service_manager:
         hostname: "{{ vcenter_hostname }}"
         username: "{{ vcenter_username }}"
-        password: "{{ vcenter_password }}"
+        password: "{{ vcenterfidpassword }}"
         esxi_hostname: "{{ esxi_hostname }}" 
 #        cluster_name: "{{ vcenter_cluster }}" 
         validate_certs: no
@@ -194,7 +194,7 @@
       vmware_host_service_manager:
         hostname: "{{ vcenter_hostname }}"
         username: "{{ vcenter_username }}"
-        password: "{{ vcenter_password }}"
+        password: "{{ vcenterfidpassword }}"
         esxi_hostname: "{{ esxi_hostname }}" 
 #        cluster_name: "{{ vcenter_cluster }}" 
         validate_certs: no
@@ -206,7 +206,7 @@
       vmware_host_service_manager:
         hostname: "{{ vcenter_hostname }}"
         username: "{{ vcenter_username }}"
-        password: "{{ vcenter_password }}"
+        password: "{{ vcenterfidpassword }}"
         esxi_hostname: "{{ esxi_hostname }}" 
 #        cluster_name: "{{ vcenter_cluster }}" 
         validate_certs: no
@@ -222,7 +222,7 @@
       vmware_host_config_manager:
         hostname: "{{ vcenter_hostname }}"
         username: "{{ vcenter_username }}"
-        password: "{{ vcenter_password }}"
+        password: "{{ vcenterfidpassword }}"
         esxi_hostname: "{{ esxi_hostname }}" 
 #        cluster_name: "{{ vcenter_cluster }}" 
         validate_certs: no
@@ -245,7 +245,7 @@
       vmware_host_firewall_manager:
         hostname: '{{ vcenter_hostname }}'
         username: '{{ vcenter_username }}'
-        password: '{{ vcenter_password }}'
+        password: '{{ vcenterfidpassword }}'
         esxi_hostname: "{{ esxi_hostname }}" 
 #        cluster_name: "{{ vcenter_cluster }}"  
         validate_certs: no      
@@ -265,7 +265,7 @@
       vmware_host_lockdown:
         hostname: "{{ vcenter_hostname }}"
         username: "{{ vcenter_username }}"
-        password: "{{ vcenter_password }}"
+        password: "{{ vcenterfidpassword }}"
         esxi_hostname: "{{ esxi_hostname }}" 
 #        cluster_name: "{{ vcenter_cluster }}" 
         validate_certs: no
