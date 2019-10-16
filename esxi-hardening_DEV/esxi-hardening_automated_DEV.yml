@@ -1,9 +1,9 @@
 - hosts: localhost 
   gather_facts: no
   strategy: free
-  ####################################################################################################
-  ## Variables #######################################################################################
-  ####################################################################################################
+####################################################################################################
+## Variables #######################################################################################
+####################################################################################################
 
   vars:
     vcenter_hostname: "bennetvc.bennet.com" 
@@ -12,45 +12,47 @@
     esxi_username: "root"
     ### Passwords provided by Ansible Vault
 
-  tasks:
+####################################################################################################
+  tasks: ########################################################################################### 
+####################################################################################################
 
-  ####################################################################################################
-  ## Gathering Facts #################################################################################
-  ####################################################################################################
-
-    - name: Get Services
-      vmware_host_service_facts:
-        hostname: "{{ vcenter_hostname }}"
-        username: "{{ vcenter_username }}"
-        password: "{{ vcenter_password }}"
-        esxi_hostname: "{{ esxi_hostname }}" 
+####################################################################################################
+## Gathering Facts #################################################################################
+####################################################################################################
+#
+#    - name: Get Services
+#      vmware_host_service_facts:
+#        hostname: "{{ vcenter_hostname }}"
+#        username: "{{ vcenter_username }}"
+#        password: "{{ vcenter_password }}"
+#        esxi_hostname: "{{ esxi_hostname }}" 
 #        cluster_name: "{{ vcenter_cluster }}" 
-        validate_certs: no
-      tags: debug
-
-    - name: Get Advanced Options
-      vmware_host_config_facts:
-        hostname: "{{ vcenter_hostname }}"
-        username: "{{ vcenter_username }}"
-        password: "{{ vcenter_password }}"
-        esxi_hostname: "{{ esxi_hostname }}" 
+#        validate_certs: no
+#      tags: debug
+#
+#    - name: Get Advanced Options
+#      vmware_host_config_facts:
+#        hostname: "{{ vcenter_hostname }}"
+#        username: "{{ vcenter_username }}"
+#        password: "{{ vcenter_password }}"
+#        esxi_hostname: "{{ esxi_hostname }}" 
 #        cluster_name: "{{ vcenter_cluster }}" 
-        validate_certs: no
-      tags: debug
-
-    - name: Get Firewall Rules
-      vmware_host_firewall_facts:
-        hostname: '{{ vcenter_hostname }}'
-        username: '{{ vcenter_username }}'
-        password: '{{ vcenter_password }}'
-        esxi_hostname: "{{ esxi_hostname }}" 
+#        validate_certs: no
+#      tags: debug
+#
+#    - name: Get Firewall Rules
+#      vmware_host_firewall_facts:
+#        hostname: '{{ vcenter_hostname }}'
+#        username: '{{ vcenter_username }}'
+#        password: '{{ vcenter_password }}'
+#        esxi_hostname: "{{ esxi_hostname }}" 
 #        cluster_name: "{{ vcenter_cluster }}"  
-        validate_certs: no
-      tags: debug
-
-  ####################################################################################################
-  ## Disable Lockdown Mode ############################################################################
-  ####################################################################################################
+#        validate_certs: no
+#      tags: debug
+#
+####################################################################################################
+## Disable Lockdown Mode ###########################################################################
+####################################################################################################
 
     - name: Disable Lockdown Mode
       vmware_host_lockdown:
