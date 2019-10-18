@@ -1,10 +1,13 @@
-- hosts: all
+- hosts: all 
   gather_facts: true
-  sudo: true    
+  #sudo: true #this is only need if running from normal ansible.
+  serial: 1   
   tasks:
    - name: Updates Servers via apt-get 
      apt: update_cache=yes
    - name: Upgrade Servers via apt-get
      apt: upgrade=dist
+#     register: upgrade
    - name: Reboot Servers
      reboot:
+#     when: upgrade.change
