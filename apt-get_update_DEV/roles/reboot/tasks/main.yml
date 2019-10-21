@@ -1,0 +1,2 @@
+  - name: Upgrade Servers via apt-get
+    apt: upgrade=dist
