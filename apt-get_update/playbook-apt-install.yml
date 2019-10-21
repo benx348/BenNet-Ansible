@@ -1,11 +1,7 @@
 - hosts: all 
   gather_facts: true
-  sudo: true 
   serial: 1   
-  tasks:
-   - name: Updates Servers via apt-get 
-     apt: update_cache=yes
-   - name: Upgrade Servers via apt-get
-     apt: upgrade=dist
-   - name: Reboot Servers
-     reboot:
+  roles:
+   - apt-get_update
+   - apt-get_upgrade
+   - Reboot 
