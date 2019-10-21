@@ -1,2 +1,7 @@
    - name: Upgrade Servers via apt-get
      apt: upgrade=dist
+     register: upgrade
+
+   - name: Reboot Sever
+     reboot:
+     when: upgrade.changed
