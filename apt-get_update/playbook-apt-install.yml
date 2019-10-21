@@ -4,4 +4,3 @@
   roles:
    - apt-get_update
    - apt-get_upgrade
-   - reboot 
