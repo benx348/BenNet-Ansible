@@ -1,0 +1,6 @@
+- hosts: all 
+  gather_facts: true
+  serial: 1   
+  roles:
+   - apt-get_update
+   - apt-get_upgrade
