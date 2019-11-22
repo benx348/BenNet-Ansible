@@ -8,16 +8,16 @@
         username: "{{ vcenter_username }}"
         password: "{{ vcenter_password }}"
         esxi_hostname: "{{ esxi_hostname }}" 
-#        cluster_name: "{{ vcenter_cluster }}" ## This is used if running against machine cluster instead of stand alone ESXI
+        cluster_name: "{{ vcenter_cluster }}" ## This is used if running against machine cluster instead of stand alone ESXI
         validate_certs: no
         options:
-            "UserVars.ESXiShellInteractiveTimeOut": 900                                                            ## This setting sets the interactive timeout for ssh
-            "UserVars.ESXiShellTimeOut": 900                                                                       ## This setting sets the interactive timeout for ssh
-            "UserVars.DcuiTimeOut": 600
-            "UserVars.SuppressShellWarning": 0
-            "Security.AccountLockFailures": 3                                                                     ## Maximum 
-            "Security.AccountUnlockTime": 900
-            "Security.PasswordQualityControl": "similar=deny retry=3 min=disabled,disabled,disabled,disabled,15"
-            "DCUI.Access": "root"
-            "Net.BlockGuestBPDU": 1
-            "Config.HostAgent.plugins.solo.enableMob": false
+            "UserVars.ESXiShellInteractiveTimeOut": 900                                                           ## Idle time before an interactive shell is automatically logged out (in seconds, 0 disables). Takes effect only for newly logged in sessions.
+            "UserVars.ESXiShellTimeOut": 900                                                                      ## Time before automatically disabling local and remote shell access (in seconds, 0 disables). Takes effect after the services are restarted
+            "UserVars.DcuiTimeOut": 600                                                                           ## An idle time in seconds before DCUI is automatically logged out. Setting 0 disables the timeout.
+            "UserVars.SuppressShellWarning": 0                                                                    ## Do not show warning for enabled local and remote shell access
+            "Security.AccountLockFailures": 3                                                                     ## Maximum allowed failed login attempts before locking out a user's account. Zero disables account locking.
+            "Security.AccountUnlockTime": 900                                                                     ## Duration in seconds to lock out a user's account after exceeding the maximum allowed failed login attempts.
+            "Security.PasswordQualityControl": "similar=deny retry=3 min=disabled,disabled,disabled,disabled,15"  ## Raw options for pam_passwdqc PAM module. This value is used as is in PAM's configuration file, so use with caution.
+            "DCUI.Access": "root"                                                                                 ## One or more comma-separated local users which are granted unconditional access to DCUI, even if they don't have administrator role on the host.
+            "Net.BlockGuestBPDU": 1                                                                               ## Block guest sourced BPDU frames
+            "Config.HostAgent.plugins.solo.enableMob": false                                                      ## Enables or disables the Debug Managed Object Browser for the ESXi host.
