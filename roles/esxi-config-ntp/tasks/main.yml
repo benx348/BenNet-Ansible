@@ -1,0 +1,16 @@
+####################################################################################################
+## Configure NTP  ##################################################################################
+####################################################################################################
+
+    - name: Configure ESXI NTP Services
+      vmware_host_ntp:
+        hostname: "{{ vcenter_hostname }}"
+        username: "{{ vcenter_username }}"
+        password: "{{ vcenter_password }}"
+        esxi_hostname: "{{ esxi_hostname }}"
+#        cluster_name: "{{ vcenter_cluster }}"  ## This is used if running against machine cluster instead of stand alone ESXI  
+        state: present
+        ntp_servers:
+        - time.nist.gov
+        - 1.pool.ntp.org
+        validate_certs: no

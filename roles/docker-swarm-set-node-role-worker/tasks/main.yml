@@ -1,0 +1,4 @@
+- name: Set node role
+  docker_node:
+    hostname: mynode
+    role: worker

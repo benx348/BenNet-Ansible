@@ -1,0 +1,4 @@
+- name: Set node availability
+  docker_node:
+    hostname: bennetdockmanager-0
+    availability: drain

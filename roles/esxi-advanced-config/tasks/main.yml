@@ -1,0 +1,23 @@
+  ####################################################################################################
+  ## Manage Advanced Options #########################################################################
+  ####################################################################################################
+
+    - name: Set Advanced Options
+      vmware_host_config_manager:
+        hostname: "{{ vcenter_hostname }}"
+        username: "{{ vcenter_username }}"
+        password: "{{ vcenter_password }}"
+        esxi_hostname: "{{ esxi_hostname }}" 
+#        cluster_name: "{{ vcenter_cluster }}" ## This is used if running against machine cluster instead of stand alone ESXI
+        validate_certs: no
+        options:
+            "UserVars.ESXiShellInteractiveTimeOut": 900                                                            ## This setting sets the interactive timeout for ssh
+            "UserVars.ESXiShellTimeOut": 900                                                                       ## This setting sets the interactive timeout for ssh
+            "UserVars.DcuiTimeOut": 600
+            "UserVars.SuppressShellWarning": 0
+            "Security.AccountLockFailures": 3                                                                     ## Maximum 
+            "Security.AccountUnlockTime": 900
+            "Security.PasswordQualityControl": "similar=deny retry=3 min=disabled,disabled,disabled,disabled,15"
+            "DCUI.Access": "root"
+            "Net.BlockGuestBPDU": 1
+            "Config.HostAgent.plugins.solo.enableMob": false

@@ -1,0 +1,12 @@
+####################################################################################################
+## Upgrade Server via apt #########################################################################
+####################################################################################################
+
+   - name: Upgrade Servers via apt-get
+     apt: upgrade=dist
+     register: upgrade
+
+## This is a play that is only ran if a change happens during the apt-get upgrade
+   - name: Reboot Sever
+     reboot:
+     when: upgrade.changed

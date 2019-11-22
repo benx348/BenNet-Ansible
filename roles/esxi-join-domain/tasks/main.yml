@@ -1,0 +1,15 @@
+ ####################################################################################################
+## Join ESXI to Active Directory ###################################################################
+####################################################################################################
+
+    - name: Join ESXI Host to BenNet Domain
+      vmware_host_active_directory:
+        hostname: "{{ vcenter_hostname }}"
+        username: "{{ vcenter_username }}"
+        password: "{{ vcenter_password }}"
+        esxi_hostname: "{{ esxi_hostname }}" 
+        validate_certs: no
+        ad_domain: bennet.com
+        ad_user: bwalker
+        ad_password: "@00oo4785"        
+        ad_state: present

@@ -1,0 +1,17 @@
+####################################################################################################
+## Configure DNS  ##################################################################################
+####################################################################################################
+
+    - name: Configure ESXI hostname and DNS Servers
+      vmware_dns_config:
+        hostname: "{{ esxi_hostname }}"
+        username: "{{ esxi_username }}"
+        password: "{{ esxi_password }}"
+#        esxi_hostname: "{{ esxi_hostname }}" 
+#        cluster_name: "{{ vcenter_cluster }}"  ## This is used if running against machine cluster instead of stand alone ESXI  
+        change_hostname_to: bennetesxi
+        domainname: bennet.com
+        dns_servers:
+        - 192.168.10.115
+        - 8.8.4.4
+        validate_certs: no

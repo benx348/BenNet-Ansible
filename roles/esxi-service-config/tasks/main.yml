@@ -1,0 +1,147 @@
+  ####################################################################################################
+  ## Manage ESXI Services ############################################################################
+  ####################################################################################################
+
+    - name: Set "Direct Console UI" Service On
+      vmware_host_service_manager:
+        hostname: "{{ vcenter_hostname }}"
+        username: "{{ vcenter_username }}"
+        password: "{{ vcenter_password }}"
+        esxi_hostname: "{{ esxi_hostname }}" 
+#        cluster_name: "{{ vcenter_cluster }}"  ## This is used if running against machine cluster instead of stand alone ESXI
+        validate_certs: no
+        service_name: DCUI
+        state: present
+        service_policy: on
+
+    - name: Set "ESXI Shell" Service Off
+      vmware_host_service_manager:
+        hostname: "{{ vcenter_hostname }}"
+        username: "{{ vcenter_username }}"
+        password: "{{ vcenter_password }}"
+        esxi_hostname: "{{ esxi_hostname }}" 
+#        cluster_name: "{{ vcenter_cluster }}" ## This is used if running against machine cluster instead of stand alone ESXI
+        validate_certs: no
+        service_name: TSM
+        state: absent
+        service_policy: off
+
+    - name: Set "SSH" Service Off
+      vmware_host_service_manager:
+        hostname: "{{ vcenter_hostname }}"
+        username: "{{ vcenter_username }}"
+        password: "{{ vcenter_password }}"
+        esxi_hostname: "{{ esxi_hostname }}" 
+#        cluster_name: "{{ vcenter_cluster }}"  ## This is used if running against machine cluster instead of stand alone ESXI
+        validate_certs: no
+        service_name: TSM-SSH
+        state: absent
+        service_policy: off  
+
+    - name: Set "Load-Based Teaming Daemon" Service On
+      vmware_host_service_manager:
+        hostname: "{{ vcenter_hostname }}"
+        username: "{{ vcenter_username }}"
+        password: "{{ vcenter_password }}"
+        esxi_hostname: "{{ esxi_hostname }}" 
+#        cluster_name: "{{ vcenter_cluster }}" ## This is used if running against machine cluster instead of stand alone ESXI
+        validate_certs: no
+        service_name: lbtd
+        state: present
+        service_policy: on
+
+    - name: Set "Active Directory Service" On
+      vmware_host_service_manager:
+        hostname: "{{ vcenter_hostname }}"
+        username: "{{ vcenter_username }}"
+        password: "{{ vcenter_password }}"
+        esxi_hostname: "{{ esxi_hostname }}" 
+#        cluster_name: "{{ vcenter_cluster }}"  ## This is used if running against machine cluster instead of stand alone ESXI
+        validate_certs: no
+        service_name: lwsmd
+        state: present
+        service_policy: on
+
+    - name: Set "NTP Daemon" Service On
+      vmware_host_service_manager:
+        hostname: "{{ vcenter_hostname }}"
+        username: "{{ vcenter_username }}"
+        password: "{{ vcenter_password }}"
+        esxi_hostname: "{{ esxi_hostname }}" 
+#        cluster_name: "{{ vcenter_cluster }}"  ## This is used if running against machine cluster instead of stand alone ESXI 
+        validate_certs: no
+        service_name: ntpd
+        state: present
+        service_policy: on
+
+    - name: Set "PC/SC Smart Card Daemon" Service Off
+      vmware_host_service_manager:
+        hostname: "{{ vcenter_hostname }}"
+        username: "{{ vcenter_username }}"
+        password: "{{ vcenter_password }}"
+        esxi_hostname: "{{ esxi_hostname }}" 
+#        cluster_name: "{{ vcenter_cluster }}"  ## This is used if running against machine cluster instead of stand alone ESXI 
+        validate_certs: no
+        service_name: pcscd
+        state: absent
+        service_policy: off
+
+    - name: Set "CIM Server" Service Off
+      vmware_host_service_manager:
+        hostname: "{{ vcenter_hostname }}"
+        username: "{{ vcenter_username }}"
+        password: "{{ vcenter_password }}"
+        esxi_hostname: "{{ esxi_hostname }}" 
+#        cluster_name: "{{ vcenter_cluster }}"  ## This is used if running against machine cluster instead of stand alone ESXI
+        validate_certs: no
+        service_name: sfcbd-watchdog
+        state: absent
+        service_policy: off
+
+    - name: Set "SNMP Server" Service Off
+      vmware_host_service_manager:
+        hostname: "{{ vcenter_hostname }}"
+        username: "{{ vcenter_username }}"
+        password: "{{ vcenter_password }}"
+        esxi_hostname: "{{ esxi_hostname }}" 
+#        cluster_name: "{{ vcenter_cluster }}"  ## This is used if running against machine cluster instead of stand alone ESXI
+        validate_certs: no
+        service_name: snmpd
+        state: absent
+        service_policy: off
+
+    - name: Set "Syslog Server" Service Off
+      vmware_host_service_manager:
+        hostname: "{{ vcenter_hostname }}"
+        username: "{{ vcenter_username }}"
+        password: "{{ vcenter_password }}"
+        esxi_hostname: "{{ esxi_hostname }}" 
+#        cluster_name: "{{ vcenter_cluster }}"  ## This is used if running against machine cluster instead of stand alone ESXI
+        validate_certs: no
+        service_name: vmsyslogd
+        state: present
+        service_policy: on
+
+    - name: Set "VMware vCenter Agent" Service on
+      vmware_host_service_manager:
+        hostname: "{{ vcenter_hostname }}"
+        username: "{{ vcenter_username }}"
+        password: "{{ vcenter_password }}"
+        esxi_hostname: "{{ esxi_hostname }}" 
+#        cluster_name: "{{ vcenter_cluster }}"  ## This is used if running against machine cluster instead of stand alone ESXI
+        validate_certs: no
+        service_name: vpxa
+        state: present
+        service_policy: on
+
+    - name: Set "X.Org Server" Service Off
+      vmware_host_service_manager:
+        hostname: "{{ vcenter_hostname }}"
+        username: "{{ vcenter_username }}"
+        password: "{{ vcenter_password }}"
+        esxi_hostname: "{{ esxi_hostname }}" 
+#        cluster_name: "{{ vcenter_cluster }}"  ## This is used if running against machine cluster instead of stand alone ESXI
+        validate_certs: no
+        service_name: xorg
+        state: absent
+        service_policy: off

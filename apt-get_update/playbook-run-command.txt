@@ -1,3 +1,0 @@
-## Inventory file is not in git so we must specify where it is.
-
-ansible-playbook playbook-apt-install.yml --ask-become-pass -i /home/administrator/ansibles/PROD/inventory-prod.yml
